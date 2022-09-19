@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Roles;
+namespace App\Http\Controllers\Api\Roles;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -46,3 +46,4 @@ class RolePermissionController extends Controller
         }
     }
 }
+

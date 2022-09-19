@@ -50,7 +50,6 @@ class PermissionController extends Controller
     }
 
 
-
     public function destroy(Permission $permission): ?bool
     {
 
@@ -58,9 +57,8 @@ class PermissionController extends Controller
 
     }
 
-   
 
-    public function get_all_permissions(): AnonymousResourceCollection
+    public function getAllPermissions(): AnonymousResourceCollection
     {
 
         $permissions = Permission::all();

@@ -18,13 +18,14 @@ class UserController extends Controller
     {
         View::share('page_title', 'Users');
         $users = User::with(['roles'])->orderby('created_at', 'DESC')->paginate(1);
-
+        return UserResource::collection($users);
+    }
 
     public function store(UserRequest $request, UserService $userService): UserResource
     {
 
-     $user = $userService->createUser($request);
-     return new UserResource($user);
+        $user = $userService->createUser($request);
+        return new UserResource($user);
     }
 
 
@@ -41,7 +42,6 @@ class UserController extends Controller
 
         return new UserResource($user);
     }
-
 
 
     public function destroy(User $user): ?bool

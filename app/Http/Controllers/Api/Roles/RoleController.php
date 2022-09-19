@@ -1,15 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Roles;
+namespace App\Http\Controllers\Api\Roles;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Helpers\Minion;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Validator;
-use Spatie\Permission\Models\Permission;
 use Illuminate\Support\Facades\View;
 use App\Models\Roles\Role;
 use App\Http\Resources\Role\RoleResource;
@@ -57,7 +50,7 @@ class RoleController extends Controller
         return $role->delete();
     }
 
-    public function get_all_roles(): AnonymousResourceCollection
+    public function getAllRoles(): AnonymousResourceCollection
     {
         $roles = Role::all();
         return RoleResource::collection($roles);

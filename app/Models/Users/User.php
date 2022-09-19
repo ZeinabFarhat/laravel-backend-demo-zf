@@ -35,11 +35,8 @@ class User extends Authenticatable
     public function setPasswordAttribute($value)
     {
 
-
         $this->attributes['password'] = Hash::make($value);
     }
-
-        protected $fillable = ['first_name', 'last_name','email', 'password', 'slug'];
 
 
     public function setSlugAttribute()
@@ -57,10 +54,5 @@ class User extends Authenticatable
     {
         return preg_replace('/\s+/', ' ', $this->first_name . '' . $this->last_name);
     }
-
-        public function getFullNameAttribute()
-           {
-               return preg_replace('/\s+/', ' ',$this->first_name. '' .$this->last_name);
-           }
-
 }
+
