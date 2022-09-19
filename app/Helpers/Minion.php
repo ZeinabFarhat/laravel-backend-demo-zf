@@ -77,13 +77,14 @@ class Minion {
     }
 
     public static function create_slug($variable, $class) {
+
         $slug  = Str::slug($variable);
+
         $exist = $class::where('slug', 'LIKE', "%$slug%")->get();
 
         if (count($exist) > 0) {
             $slug .= '-' . (count($exist) + 1);
         }
-
         return $slug;
     }
 

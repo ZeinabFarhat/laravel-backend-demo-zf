@@ -39,10 +39,10 @@ class User extends Authenticatable
     }
 
 
-    public function setSlugAttribute()
+    public function setSlugAttribute($value)
     {
-        $title = $this->name;
-        $this->attributes['slug'] = Minion::create_slug($title, get_class($this));
+
+        $this->attributes['slug'] = Minion::create_slug($value, get_class($this));
     }
 
 

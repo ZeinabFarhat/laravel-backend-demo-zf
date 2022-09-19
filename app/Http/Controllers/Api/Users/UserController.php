@@ -28,7 +28,6 @@ class UserController extends Controller
         return new UserResource($user);
     }
 
-
     public function show(User $user): UserResource
     {
         return UserResource::make(User::with(['roles'])->find($user->id));

@@ -21,6 +21,7 @@ class UserService
         }
 
         $selectedRoles = Role::whereIn('id', $roles_ids)->pluck('name');
+
         $user = User::create(
             [
                 'first_name' => $request->get('first_name'),
