@@ -31,6 +31,7 @@ class UserService
                 'slug' => $request->get('first_name') . $request->get('last_name')
             ]
         );
+        dd($user);
 
         $user->syncRoles($selectedRoles);
         return $user;

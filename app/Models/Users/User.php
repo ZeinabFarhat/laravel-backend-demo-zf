@@ -28,7 +28,7 @@ class User extends Authenticatable
     public function sluggable(): array
     {
         return [
-            'source' => 'name'
+            'source' => 'first_name'
         ];
     }
 
@@ -50,9 +50,5 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function getFullNameAttribute()
-    {
-        return preg_replace('/\s+/', ' ', $this->first_name . '' . $this->last_name);
-    }
 }
 
