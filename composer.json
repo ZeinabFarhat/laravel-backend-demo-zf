@@ -1,0 +1,86 @@
+{
+  "name": "laravel/laravel",
+  "description": "The Laravel Framework.",
+  "keywords": [
+    "framework",
+    "laravel"
+  ],
+  "license": "MIT",
+  "type": "project",
+  "require": {
+    "php": "^8.0",
+    "ext-ctype": "*",
+    "ext-dom": "*",
+    "ext-gd": "*",
+    "ext-iconv": "*",
+    "ext-libxml": "*",
+    "ext-mbstring": "*",
+    "ext-SimpleXML": "*",
+    "ext-xml": "*",
+    "ext-xmlreader": "*",
+    "ext-xmlwriter": "*",
+    "ext-zip": "*",
+    "ext-zlib": "*",
+    "psr/simple-cache": "^1.0",
+    "ext-json": "*",
+    "fideloper/proxy": "^4.4",
+    "fruitcake/laravel-cors": "^2.0",
+    "guzzlehttp/guzzle": "^7.0.1",
+    "laravel/breeze": "^1.3",
+    "laravel/framework": "^9.0",
+    "laravel/tinker": "^2.5",
+    "laravel/ui": "^3.3",
+    "spatie/cpu-load-health-check": "^1.0",
+    "spatie/laravel-backup": "^8.0",
+    "spatie/laravel-health": "^1.8",
+    "spatie/laravel-permission": "^5.5.5",
+    "thomaswelton/laravel-mcrypt-faker": "^1.0.0",
+    "barryvdh/laravel-ide-helper": "^2.7",
+    "davejamesmiller/laravel-breadcrumbs": "^5.3",
+    "laravel-admin-ext/media-manager": "^2.0",
+    "laravelcollective/html": "^6.1",
+    "lab404/laravel-impersonate": "^1.6",
+    "laravel/sanctum": "^3.0"
+  },
+  "require-dev": {
+    "barryvdh/laravel-debugbar": "^3.6",
+    "spatie/laravel-ignition": "^1.0",
+    "fakerphp/faker": "^1.9.1",
+    "laravel/sail": "^1.9.1",
+    "nunomaduro/collision": "^6.0",
+    "phpunit/phpunit": "^9.3.3"
+  },
+  "autoload": {
+    "classmap": [
+      "database"
+    ],
+    "psr-4": {
+      "App\\": "app/"
+    }
+  },
+  "autoload-dev": {
+    "classmap": [
+      "tests/TestCase.php"
+    ]
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "php artisan clear-compiled",
+      "php artisan optimize"
+    ],
+    "post-update-cmd": [
+      "php artisan clear-compiled",
+      "php artisan optimize"
+    ],
+    "post-create-project-cmd": [
+      "php -r \"copy('.env.example', '.env');\"",
+      "php artisan key:generate"
+    ]
+  },
+  "config": {
+    "preferred-install": "dist",
+    "platform": {
+      "php": "8.0.2"
+    }
+  }
+}
