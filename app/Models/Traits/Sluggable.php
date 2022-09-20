@@ -9,9 +9,7 @@ trait Sluggable {
 	public static function bootSluggable()
 	{
 		static::creating(function ($model) {
-			$settings = $model->sluggable();
-			$variable = $settings['source'];
-			$slug = Minion::create_slug($model->$variable, get_class($model));
+			$slug = Minion::create_slug($model->first_name . '-'. $model->last_name, get_class($model));
 			$model->slug = $slug;
 		});
 	}

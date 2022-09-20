@@ -78,6 +78,8 @@ class Minion {
 
     public static function create_slug($variable, $class) {
 
+
+
         $slug  = Str::slug($variable);
 
         $exist = $class::where('slug', 'LIKE', "%$slug%")->get();

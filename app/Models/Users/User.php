@@ -25,12 +25,7 @@ class User extends Authenticatable
 
     protected $fillable = ['first_name', 'last_name', 'email', 'password', 'slug'];
 
-    public function sluggable(): array
-    {
-        return [
-            'source' => 'first_name'
-        ];
-    }
+
 
     public function setPasswordAttribute($value)
     {
