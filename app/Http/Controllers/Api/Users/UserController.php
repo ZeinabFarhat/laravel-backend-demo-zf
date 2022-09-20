@@ -13,7 +13,6 @@ use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class UserController extends Controller
 {
-
     public function index(): AnonymousResourceCollection
     {
         View::share('page_title', 'Users');

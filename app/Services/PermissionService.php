@@ -1,11 +1,12 @@
 <?php namespace App\Services;
 
+use App\Http\Requests\Permission\PermissionRequest;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Permission;
 
 class PermissionService
 {
-    public function createPermission(Request $request): Permission
+    public function createPermission(PermissionRequest $request): Permission
     {
             $permission = new Permission();
             $permission->name = $request->get('name');
@@ -15,7 +16,7 @@ class PermissionService
             return $permission;
     }
 
-     public function updatePermission(Request $request): Permission
+     public function updatePermission(PermissionRequest $request, Permission $permission): Permission
         {
               $name = $request->get( 'name' );
               $permission->name = $name;

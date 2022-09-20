@@ -28,7 +28,7 @@ class UserService
                 'last_name' => $request->get('last_name'),
                 'email' => $request->get('email'),
                 'password' => Hash::make($request->get('password')),
-                'slug' => $request->get('first_name') .'-'. $request->get('last_name')
+                'slug' => $request->get('first_name') . '-' . $request->get('last_name')
             ]
         );
 

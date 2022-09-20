@@ -7,7 +7,6 @@ use App\Http\Resources\Role\RoleResource;
 
 class UserResource extends JsonResource
 {
-
     public function toArray($request): array
     {
 

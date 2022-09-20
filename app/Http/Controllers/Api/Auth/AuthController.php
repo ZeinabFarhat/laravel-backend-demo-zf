@@ -52,14 +52,12 @@ class AuthController extends Controller
         }
     }
 
-
     public function login(Request $request): \Illuminate\Http\JsonResponse
     {
         $validator = Validator::make($request->all(), [
             'email' => 'required|email',
             'password' => 'required|string|min:8'
         ]);
-
 
         if ($validator->fails()) {
             return response()->json([
@@ -89,5 +87,4 @@ class AuthController extends Controller
             ], 400);
         }
     }
-
 }

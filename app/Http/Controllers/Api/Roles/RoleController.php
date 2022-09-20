@@ -28,7 +28,6 @@ class RoleController extends Controller
         return new RoleResource($role);
     }
 
-
     public function show(Role $role): RoleResource
     {
 
@@ -43,7 +42,6 @@ class RoleController extends Controller
 
         return new RoleResource($role);
     }
-
 
     public function destroy(Role $role): ?bool
     {
