@@ -22,7 +22,6 @@ class UserController extends Controller
 
     public function store(UserRequest $request, UserService $userService): UserResource
     {
-
         $user = $userService->createUser($request);
         return new UserResource($user);
     }
@@ -32,7 +31,6 @@ class UserController extends Controller
         return UserResource::make(User::with(['roles'])->find($user->id));
     }
 
-
     public function update(UserRequest $request, User $user, UserService $userService): UserResource
     {
 
@@ -40,7 +38,6 @@ class UserController extends Controller
 
         return new UserResource($user);
     }
-
 
     public function destroy(User $user): ?bool
     {

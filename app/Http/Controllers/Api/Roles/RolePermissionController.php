@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
-
 class RolePermissionController extends Controller
 {
     public function update(Request $request, $id)

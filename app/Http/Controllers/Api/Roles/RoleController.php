@@ -12,7 +12,6 @@ use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class RoleController extends Controller
 {
-
     public function index(): AnonymousResourceCollection
     {
         $roles = Role::orderby('created_at', 'DESC')->paginate(1);

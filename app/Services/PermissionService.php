@@ -1,7 +1,6 @@
 <?php namespace App\Services;
 
 use App\Http\Requests\Permission\PermissionRequest;
-use Illuminate\Http\Request;
 use Spatie\Permission\Models\Permission;
 
 class PermissionService

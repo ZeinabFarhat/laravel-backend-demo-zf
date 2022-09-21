@@ -28,7 +28,6 @@ class User extends Authenticatable
 
     public function setPasswordAttribute($value)
     {
-
         $this->attributes['password'] = Hash::make($value);
     }
 
@@ -38,7 +37,6 @@ class User extends Authenticatable
 
         $this->attributes['slug'] = Minion::create_slug($value, get_class($this));
     }
-
 
     protected $casts = [
         'email_verified_at' => 'datetime',
