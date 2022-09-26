@@ -24,7 +24,6 @@ class RolePermissionController extends Controller
                 foreach ($permissions_checked as $id => $value) {
 
                     array_push($permissions_ids, $value->id);
-
                 }
 
                 $permissions = Permission::whereIn('id', $permissions_ids)->get();
