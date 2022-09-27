@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\Users\UserController;
 use App\Http\Controllers\Api\Permissions\PermissionController;
 use  App\Http\Controllers\Api\Roles\RoleController;
 use App\Http\Controllers\Api\Auth\AuthController;
+use  App\Http\Controllers\Api\Roles\RolePermissionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +29,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::resource('/permissions', PermissionController::class);
     Route::resource('/roles', RoleController::class);
     Route::prefix('role')->group(function () {
-        Route::resource('permission', 'Roles\RolePermissionController');
+        Route::resource('permission', RolePermissionController::class);
     });
 });
 
