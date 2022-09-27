@@ -29,14 +29,12 @@ class RoleController extends Controller
 
     public function show(Role $role): RoleResource
     {
-
         View::share('page_title', 'Role [ ' . $role->name . ' ] | Edit');
         return RoleResource::make(Role::with(['permissions'])->find($role->id));
     }
 
     function update(RoleRequest $request, Role $role, RoleService $roleService): RoleResource
     {
-
         $role = $roleService->updateRole($request, $role);
 
         return new RoleResource($role);
